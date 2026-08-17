@@ -5,3 +5,7 @@ Pygments
 beautifulsoup4
 sqlparse
 pytz
+Pillow
+gunicorn
+whitenoise
+dj-database-url
