@@ -1,0 +1,1 @@
+﻿web: cd classmanager && gunicorn classmanager.wsgi --log-file -

@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.urls import reverse
 from django.conf import settings
-import misaka
+import markdown
 # Create your models here.
 
 class User(AbstractUser):
@@ -73,7 +73,7 @@ class MessageToTeacher(models.Model):
         return self.message
 
     def save(self,*args,**kwargs):
-        self.message_html = misaka.html(self.message)
+        self.message_html = markdown.markdown(self.message)
         super().save(*args,**kwargs)
 
     class Meta:
@@ -91,7 +91,7 @@ class ClassNotice(models.Model):
         return self.message
 
     def save(self,*args,**kwargs):
-        self.message_html = misaka.html(self.message)
+        self.message_html = markdown.markdown(self.message)
         super().save(*args,**kwargs)
 
     class Meta:
